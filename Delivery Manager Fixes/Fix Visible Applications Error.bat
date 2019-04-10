@@ -7,6 +7,7 @@ taskkill /IM SearchUI.exe /F
 taskkill /IM Microsoft.Photos.exe /F
 taskkill /IM YourPhone.exe /F
 taskkill /IM SkypeApp.exe /F
+taskkill /IM WWAHost.exe /F
 sc config fhsvc start= disabled
 net stop fhsvc  /y
 sc config TermService start= disabled
