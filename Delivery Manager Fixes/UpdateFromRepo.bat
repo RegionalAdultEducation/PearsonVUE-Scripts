@@ -21,5 +21,4 @@ if not exist "%basePath%" (
 	)
 )
 pushd "%prevDir%"
-echo "%prevDir%"
 exit /b %ERRORLEVEL%

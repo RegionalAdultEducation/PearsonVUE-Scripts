@@ -19,6 +19,7 @@ echo.
 ::Run delivery manager
 echo ----- Checking for updates. Please Wait.
 call UpdateFromRepo.bat
+echo F | xcopy "..\Misc\Delivery Manager.lnk" "%HOMEDRIVE%%HOMEPATH%\Desktop\Delivery Manager.lnk" /y >nul 2>&1
 echo.
 if not %errorlevel% == 0 ( 
 	echo -------- ERROR: %errorlevel%
