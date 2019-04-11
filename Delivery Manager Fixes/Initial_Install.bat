@@ -1,10 +1,12 @@
 pushd "%~dp0"
 call DetectAdminPermissions.bat
 ::Setup Paths
-set "callDir=%~dp0"
 set "basePath=C:\MyRACE1-VUE_Scripts\"
+set /p "basePath=Enter name or press [ENTER] for default [%basePath%]: "
+
 set "repoDir=%basePath%PearsonVUE-Scripts\"
 set "gitDir=%repoDir%Misc\git\bin\"
+set "callDir=%repoDir%Delivery Manager Fixes\"
 setx myrace1PVScripts "%callDir%\"
 
 ::Setup SSH
