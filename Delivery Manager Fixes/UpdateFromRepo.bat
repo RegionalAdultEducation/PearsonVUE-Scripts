@@ -10,7 +10,7 @@ if not exist "%basePath%" (
 	pushd "%basePath%"
 	if exist "%repoDir%" (
 		echo Repo exists, checking for updates...
-		pushd %repoDir%
+		pushd "%repoDir%"
 		"%gitDir%git.exe" checkout master 2>&1
 		"%gitDir%git.exe" reset --hard origin/master 2>&1
 		"%gitDir%git.exe" pull -q origin master
