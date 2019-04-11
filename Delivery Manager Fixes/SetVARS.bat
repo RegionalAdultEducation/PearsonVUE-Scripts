@@ -1,4 +1,6 @@
 ::Set path variables
-set basePath=C:\MyRACE1-VUE_Scripts\
-set repoDir=%basePath%PearsonVUE-Scripts\
-set gitDir=%repoDir%Misc\git\bin\
+set "callDir=%~dp0"
+set "basePath=%~dp0..\..\"
+set "repoDir=%~dp0..\"
+set "gitDir=%~dp0..\Misc\git\bin\"
+if "%myrace1PVScripts%"=="" setx myrace1PVScripts %callDir%
