@@ -19,6 +19,7 @@ if not exist "%basePath%" (
 		if [%local%] == [%remote%] (
 			echo No Update Needed
 		) else (
+			echo Updates needed. Please wait while they download...
 			"%gitDir%git.exe" checkout master >null 2>&1
 			"%gitDir%git.exe" reset --hard origin/master >null 2>&1
 			"%gitDir%git.exe" pull -q origin master
