@@ -11,19 +11,9 @@ if not exist "%basePath%" (
 	if exist "%repoDir%" (
 		echo Repo exists, checking for updates...
 		pushd "%repoDir%"
-		"%gitDir%git.exe" remote update
-		"%gitDir%git.exe" rev-parse @ > %temp%\local.txt
-		"%gitDir%git.exe" rev-parse @{u} > %temp%\remote.txt
-		set /p local=<%temp%\local.txt
-		set /p remote=<%temp%\remote.txt
-		if [%local%] == [%remote%] (
-			echo No Update Needed
-		) else (
-			echo Updates needed. Please wait while they download...
-			"%gitDir%git.exe" checkout master >null 2>&1
-			"%gitDir%git.exe" reset --hard origin/master >null 2>&1
-			"%gitDir%git.exe" pull -q origin master
-		)
+		"%gitDir%git.exe" checkout master 2>&1
+		"%gitDir%git.exe" reset --hard origin/master 2>&1
+		"%gitDir%git.exe" pull -q origin master
 		echo.
 	) else (
 		echo Repo doesn't exist, cloning...
