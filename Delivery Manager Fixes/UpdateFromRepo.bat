@@ -14,6 +14,7 @@ if not exist "%basePath%" (
 		"%gitDir%git.exe" checkout master 2>&1
 		"%gitDir%git.exe" reset --hard origin/master 2>&1
 		"%gitDir%git.exe" pull -q origin master
+		"%gitDir%git.exe" log -1 --pretty="%%h %%s"
 		echo.
 	) else (
 		echo Repo doesn't exist, cloning...
