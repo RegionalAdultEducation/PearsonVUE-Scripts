@@ -10,10 +10,13 @@ taskkill /IM SkypeApp.exe /F
 taskkill /IM WWAHost.exe /F
 taskkill /IM MicrosoftEdge.exe /F
 taskkill /IM WinStore.App.exe /F
+taskkill /IM mbamtray.exe /F
+taskkill /IM ApplicationFrameHost /F
 sc config fhsvc start= disabled
 net stop fhsvc  /y
 sc config TermService start= disabled
 net stop TermService  /y
 sc config WinVNC4 start= disabled
 net stop WinVNC4  /y
+net stop AdobeARMservice /y
 exit /b 0
